@@ -1,0 +1,27 @@
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.ReactModal__Content {
+  background-color: rgb(49, 49, 49) !important;
+  border: 1px solid rgba(49, 49, 49, 1) !important;
+  box-shadow: 0 3px 6px rgb(49, 49, 49);
+}
+
+button {
+  padding: 8px;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 1s;
+  background: #12c2e9;
+  margin-bottom: 16px;
+}
+
+button p {
+  font-size: 16px;
+  font-weight: bold;
+}
+button:hover {
+  background: #f64f59;
+
+}
