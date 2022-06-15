@@ -1,10 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './Menu.css'
-import Modal from 'react-modal'
+import { useState, useEffect } from 'react'
 import ModalCustom from '../ModalCustom'
 import { useForm } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
+import FormContract from '../FormContract'
+import GetPeople from '../GetPeople'
 
 
 const customStyles = {
@@ -19,8 +20,6 @@ const customStyles = {
 };
 
 export default function Menu(props) {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const { register, formState: { errors }, handleSubmit } = useForm({
     defaultValues: {
@@ -31,8 +30,6 @@ export default function Menu(props) {
   })
 
   async function registerUser (payload) {
-    
-
     try {
       const res = await fetch('http://localhost:3333/people', {
         method: 'POST',
@@ -51,20 +48,23 @@ export default function Menu(props) {
     }
   }
 
+  
+
   return (
     <div className="menu">
       <ModalCustom title="Cadastrar usuário" button="Cadastrar usuário">
         <hr></hr>
         <form onSubmit={handleSubmit(data => { registerUser(data)})}>
           <label htmlFor="name">Nome:</label>
-          <input type="text" placeholder="ex: Francisco Assis" className={ errors.name ? 'form-control input-red' : 'form-control' } {...register("name", { required: "Este campo é obrigatório." })}></input>
+          <input id="name" type="text" placeholder="ex: Francisco Assis" className={ errors.name ? 'form-control input-red' : 'form-control' } {...register("name", { required: "Este campo é obrigatório." })}></input>
           <ErrorMessage
             errors={errors}
             name="name"
             render={({ message }) => <p className="error">{message}</p>}
           />
-          <label htmlFor="name">CPF:</label>
-          <input 
+          <label htmlFor="cpf">CPF:</label>
+          <input
+            id="cpf"
             type="text" 
             placeholder="ex: 12345678909" 
             className={ errors.cpf ? 'form-control input-red' : 'form-control' } 
@@ -75,7 +75,7 @@ export default function Menu(props) {
             name="cpf"
             render={({ message }) => <p className="error">{message}</p>}
           />
-          <label htmlFor="name">Endereço completo:</label>
+          <label htmlFor="address">Endereço completo:</label>
           <input type="text" placeholder="ex: Av. Paulista, 1120, São Paulo - SP" className={ errors.address ? 'form-control input-red' : 'form-control' } {...register("address", { required: "Este campo é obrigatório." })}></input>
           <ErrorMessage
             errors={errors}
@@ -86,6 +86,8 @@ export default function Menu(props) {
         </form>
       </ModalCustom>
       <ModalCustom title="Criar contrato" button="Criar contrato">
+        <hr></hr>
+        <FormContract></FormContract>
       </ModalCustom>
     </div>
   )

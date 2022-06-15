@@ -17,6 +17,12 @@
       "person_id": 3,
       "date_register": "Fri Feb 05 2021 10:20:00 GMT-0300 (Brasilia Standard Time)",
       "date_validate": "Fri Jul 01 2022 10:20:00 GMT-0300 (Brasilia Standard Time)"
+    },
+    {
+      "person_id": "1",
+      "date_register": "2022-06-15T20:49:16.090Z",
+      "date_validate": "1999-01-29",
+      "id": 4
     }
   ],
   "people": [
