@@ -26,7 +26,6 @@ export default function(props) {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -53,6 +52,7 @@ export default function(props) {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Modal"
+        ariaHideApp={false}
       >
         <h1>{props.title}</h1>
         {props.children}

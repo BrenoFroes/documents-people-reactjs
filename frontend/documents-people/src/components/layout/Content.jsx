@@ -33,7 +33,7 @@ export default function Content() {
     if (!data) return <p>No profile data</p>
   
     return (
-      <div className='content-custom'>
+      <div className="content-custom">
         <ul>
           {getContractsListItem()}
         </ul>

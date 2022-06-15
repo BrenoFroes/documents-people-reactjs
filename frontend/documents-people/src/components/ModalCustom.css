@@ -42,3 +42,39 @@ button:hover p {
 button:hover span {
   display: none;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+label {
+  margin-top: 16px;
+}
+input {
+  background-color: transparent;
+  border: 1px solid #c471ed;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+.input-red {
+  border: 1px solid #f64f59;
+}
+p.error {
+  color: #f64f59;
+  font-size: 12px;
+}
+button[type=submit] {
+  margin-left: auto;
+  margin-top: 24px;
+  color: white;
+  background-color: #12c2e9;
+  width: fit-content;
+  height: auto;
+  padding: 8px 24px;
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1);
+}
+button[type=submit]:hover {
+  background-color: #37daff;
+}
