@@ -36,6 +36,14 @@ export default function Content(props) {
       return diffDays
     }
 
+    function getFormatDate() {
+      const month = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]
+      let date = new Date(props.date_register)
+      let name = month[date.getMonth()];
+      let formatDate = `${date.getDate() + 1} de ${name} de ${date.getFullYear()}`
+      return formatDate
+    }
+
     if (isLoading) return <p>Loading...</p>
     if (!data) return <p>No profile data</p>
   
@@ -44,7 +52,7 @@ export default function Content(props) {
         <img className="imgContract" src={contract} alt="Contrato" width="50" height="50"></img>
         <div className="texts">
           {getPerson()}
-          <p>{props.date_register}</p>
+          <p>criado em {getFormatDate()}</p>
         </div>
         <h3>vence em {getValidate()} dias</h3>
       </div>

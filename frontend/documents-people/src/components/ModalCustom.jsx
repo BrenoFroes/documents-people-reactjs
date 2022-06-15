@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './ModalCustom.css'
 import Modal from 'react-modal'
-
+import { MdPersonAddAlt1 } from "react-icons/md"
+import { MdNoteAdd } from "react-icons/md"
 
 const customStyles = {
   content: {
@@ -35,6 +36,13 @@ export default function(props) {
   return (
     <div>
       <button onClick={openModal}>
+        <span>
+          { props.button === 'Cadastrar usuário' ? 
+            <MdPersonAddAlt1/>
+            :
+            <MdNoteAdd/>
+          }
+        </span>
         <p>
           {props.button}
         </p>
