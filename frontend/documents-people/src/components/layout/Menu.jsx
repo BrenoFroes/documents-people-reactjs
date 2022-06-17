@@ -20,7 +20,7 @@ const customStyles = {
 };
 
 export default function Menu(props) {
-
+  const [validate, setValidate] = useState(false)
   const { register, formState: { errors }, handleSubmit } = useForm({
     defaultValues: {
       name: '',
@@ -48,10 +48,23 @@ export default function Menu(props) {
     }
   }
 
+  function defineValidate(e, param) {
+    e.preventDefault()
+    localStorage.setItem('validate', param)
+    window.location.reload()
+  }
   
 
   return (
     <div className="menu">
+      <div className="filters">
+        <h4>Filtros</h4>
+        <button onClick={e => (defineValidate(e, 0))}>Vencem hoje</button>
+        <button onClick={e => (defineValidate(e, 7))}>Vencem em 7 dias</button>
+        <button onClick={e => (defineValidate(e, 15))}>Vencem em 15 dias</button>
+        <button onClick={e => (defineValidate(e, 30))}>Vencem em 30 dias</button>
+      </div>
+
       <ModalCustom title="Cadastrar usuário" button="Cadastrar usuário">
         <hr></hr>
         <form onSubmit={handleSubmit(data => { registerUser(data)})}>

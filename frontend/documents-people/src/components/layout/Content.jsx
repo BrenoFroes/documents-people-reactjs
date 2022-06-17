@@ -24,8 +24,9 @@ export default function Content() {
     }, [])
     
     function getContractsListItem() {
+      let validate = localStorage.getItem('validate')
       return data.map(contract => {
-        return <Contract key={contract.id} person_id={contract.id} date_register={contract.date_register} date_validate={contract.date_validate}></Contract>
+        return <Contract key={contract.id} validate={validate} person_id={contract.person_id} date_register={contract.date_register} date_validate={contract.date_validate}></Contract>
       })
     }
 

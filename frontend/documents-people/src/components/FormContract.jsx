@@ -9,13 +9,22 @@ export default function (props) {
   const { register, formState: { errors }, handleSubmit } = useForm({
     defaultValues: {
       person_id: '',
-      date_register: new Date(),
+      date_register: '',
       date_validate: '',
     }
   })
 
 
   async function registerContract (payload) {
+    console.log(payload)
+    payload.person_id = parseInt(payload.person_id)
+    payload.date_register = new Date()
+    let year = payload.date_validate.substring(0, 4)
+    let month = payload.date_validate.substring(5, 7)
+    let day = payload.date_validate.substring(8, 10)
+    payload.date_validate = new Date(`${year}-${month}-${day}`)
+    
+    console.log(payload)
     try {
       const res = await fetch('http://localhost:3333/contracts', {
         method: 'POST',
@@ -27,7 +36,7 @@ export default function (props) {
       })
 
       const responseEnv = await res.json()
-      alert(responseEnv.error ? "Erro. Tente novamente mais tarde!" : responseEnv)
+      alert(responseEnv.error ? "Erro. Tente novamente mais tarde!" : "Contrato criado com sucesso!")
     } catch(err) {
       alert(err ? err : "Erro. Tente novamente mais tarde!")
     }

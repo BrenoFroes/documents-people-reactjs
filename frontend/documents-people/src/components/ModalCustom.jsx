@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './ModalCustom.css'
 import Modal from 'react-modal'
 import { MdPersonAddAlt1 } from "react-icons/md"
@@ -34,7 +33,7 @@ export default function(props) {
 
   return (
     <div>
-      <button onClick={openModal}>
+      <button className="modal" onClick={openModal}>
         <span>
           { props.button === 'Cadastrar usuário' ? 
             <MdPersonAddAlt1/>

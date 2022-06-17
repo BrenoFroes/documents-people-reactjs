@@ -8,7 +8,7 @@
   box-shadow: 0 3px 6px rgb(49, 49, 49);
 }
 
-button {
+button.modal {
   padding: 8px;
   width: 55px;
   border-radius: 30px;
@@ -21,25 +21,25 @@ button {
   align-items: center;
   justify-content: center;
 }
-button:hover {
+button.modal:hover {
   width: 100%;
 }
-button span svg {
+button.modal span svg {
   fill: black;
   color:black;
   width: 20px;
   height: 20px;
 }
-button p {
+button.modal p {
   display: none;
   font-size: 12px;
   font-weight: 500;
   transition: all 1s;
 }
-button:hover p {
+button.modal:hover p {
   display: block;
 }
-button:hover span {
+button.modal:hover span {
   display: none;
 }
 form {
