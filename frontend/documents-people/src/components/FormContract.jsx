@@ -34,7 +34,8 @@ export default function (props) {
       })
 
       const responseEnv = await res.json()
-      alert(responseEnv.error ? "Erro. Tente novamente mais tarde!" : "Contrato criado com sucesso!")
+      await alert(responseEnv.error ? "Erro. Tente novamente mais tarde!" : "Contrato criado com sucesso!")
+      window.location.reload()
     } catch(err) {
       alert(err ? err : "Erro. Tente novamente mais tarde!")
     }
@@ -64,7 +65,7 @@ export default function (props) {
         name="date_validate"
         render={({ message }) => <p className="error">{message}</p>}
       />
-      <button type="submit">Cadastrar</button>
+      <button className="submit" type="submit">Cadastrar</button>
     </form>
   )
 }

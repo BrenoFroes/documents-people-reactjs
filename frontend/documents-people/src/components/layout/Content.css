@@ -10,7 +10,7 @@
   padding: 16px;
 }
 .dashboard {
-  min-height: 400px;
+  min-height: auto;
 }
 li {
   color: black;

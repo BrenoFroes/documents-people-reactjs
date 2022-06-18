@@ -30,6 +30,7 @@ button {
   background: none;
   color: #f64f59;
   font-size: 12px;
+  font-weight: 500;
   margin: 4px 0;
 }
 @media(max-width: 768px) {
