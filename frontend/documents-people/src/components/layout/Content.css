@@ -9,7 +9,20 @@
   color: black;
   padding: 16px;
 }
-
+.dashboard {
+  min-height: 400px;
+}
 li {
   color: black;
+}
+
+h2.dash {
+  color: black;
+  font-size: 32px;
+}
+@media (max-width: 768px) {
+  .content-custom {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

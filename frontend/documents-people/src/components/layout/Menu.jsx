@@ -102,6 +102,9 @@ export default function Menu(props) {
         <hr></hr>
         <FormContract></FormContract>
       </ModalCustom>
+      <button className="modal">
+        <a href="/dashboard"></a>
+      </button>
     </div>
   )
 }

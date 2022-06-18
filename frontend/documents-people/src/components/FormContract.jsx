@@ -16,15 +16,13 @@ export default function (props) {
 
 
   async function registerContract (payload) {
-    console.log(payload)
     payload.person_id = parseInt(payload.person_id)
     payload.date_register = new Date()
     let year = payload.date_validate.substring(0, 4)
     let month = payload.date_validate.substring(5, 7)
     let day = payload.date_validate.substring(8, 10)
     payload.date_validate = new Date(`${year}-${month}-${day}`)
-    
-    console.log(payload)
+  
     try {
       const res = await fetch('http://localhost:3333/contracts', {
         method: 'POST',

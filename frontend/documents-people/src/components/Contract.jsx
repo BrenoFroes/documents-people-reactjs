@@ -35,16 +35,19 @@ export default function Content(props) {
     var diffDays = -1
     if(date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate()) {
       diffDays = 0
-    } else if (date1.getFullYear() >= date2.getFullYear()) {
+    } 
+     if (date1.getFullYear() >= date2.getFullYear()) {
       let timeDiff = Math.abs(date2.getTime() - date1.getTime())
       diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24))
+      if (diffDays < 0) {
+        return -1
+      }
     }
-    console.log(diffDays)
     return diffDays
   }
 
   function showOrHidden () {
-    if(getValidate() > parseInt(validate) || getValidate() === -1) {
+    if(getValidate() > parseInt(validate) || getValidate() === -1 ) {
       return false
     }
     return true
