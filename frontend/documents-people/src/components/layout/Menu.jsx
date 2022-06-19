@@ -54,33 +54,39 @@ export default function Menu(props) {
         <ModalCustom title="Cadastrar usuário" button="Cadastrar usuário">
           <hr></hr>
           <form onSubmit={handleSubmit(data => { registerUser(data)})}>
-            <label htmlFor="name">Nome:</label>
-            <input id="name" type="text" placeholder="ex: Francisco Assis" className={ errors.name ? 'form-control input-red' : 'form-control' } {...register("name", { required: "Este campo é obrigatório." })}></input>
-            <ErrorMessage
-              errors={errors}
-              name="name"
-              render={({ message }) => <p className="error">{message}</p>}
-            />
-            <label htmlFor="cpf">CPF:</label>
-            <input
-              id="cpf"
-              type="text" 
-              placeholder="ex: 12345678909" 
-              className={ errors.cpf ? 'form-control input-red' : 'form-control' } 
-              {...register("cpf", { required: "Este campo é obrigatório." })}>
-            </input>
-            <ErrorMessage
-              errors={errors}
-              name="cpf"
-              render={({ message }) => <p className="error">{message}</p>}
-            />
-            <label htmlFor="address">Endereço completo:</label>
-            <input type="text" placeholder="ex: Av. Paulista, 1120, São Paulo - SP" className={ errors.address ? 'form-control input-red' : 'form-control' } {...register("address", { required: "Este campo é obrigatório." })}></input>
-            <ErrorMessage
-              errors={errors}
-              name="address"
-              render={({ message }) => <p className="error">{message}</p>}
-            />
+            <div className="content">
+              <label htmlFor="name">Nome:</label>
+              <input id="name" type="text" placeholder="ex: Francisco Assis" className={ errors.name ? 'form-control input-red' : 'form-control' } {...register("name", { required: "Este campo é obrigatório." })}></input>
+              <ErrorMessage
+                errors={errors}
+                name="name"
+                render={({ message }) => <p className="error">{message}</p>}
+              />
+            </div>
+            <div className="content">
+              <label htmlFor="cpf">CPF:</label>
+              <input
+                id="cpf"
+                type="text" 
+                placeholder="ex: 12345678909" 
+                className={ errors.cpf ? 'form-control input-red' : 'form-control' } 
+                {...register("cpf", { required: "Este campo é obrigatório." })}>
+              </input>
+              <ErrorMessage
+                errors={errors}
+                name="cpf"
+                render={({ message }) => <p className="error">{message}</p>}
+              />
+            </div>
+            <div className="content">
+              <label htmlFor="address">Endereço completo:</label>
+              <input type="text" placeholder="ex: Av. Paulista, 1120, São Paulo - SP" className={ errors.address ? 'form-control input-red' : 'form-control' } {...register("address", { required: "Este campo é obrigatório." })}></input>
+              <ErrorMessage
+                errors={errors}
+                name="address"
+                render={({ message }) => <p className="error">{message}</p>}
+              />
+            </div>
             <button type="submit">Cadastrar</button>
           </form>
         </ModalCustom>
