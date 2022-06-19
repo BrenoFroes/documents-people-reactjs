@@ -1,4 +1,5 @@
 <h1>Projeto desenvolvido para o desafio da SOGO Tecnologia. Capaz de cadastrar pessoas na plataforma e criar contratos a partir delas.</h1>
+<img src="https://github.com/BrenoFroes/documents-people-reactjs/blob/master/frontend/documents-people/src/assets/interface.PNG" alt="Interface" style="width: 100%;">
 <hr/>
 <br/>
 <p>Visão geral das features:</p>
