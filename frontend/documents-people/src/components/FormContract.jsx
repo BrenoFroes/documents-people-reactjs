@@ -43,28 +43,32 @@ export default function (props) {
 
   return (
     <form onSubmit={handleSubmit(data => { registerContract(data)})}>
-      <label htmlFor="person_id">Pessoa:</label>
-      <select id="person_id" className={ errors.person_id ? 'form-control input-red' : 'form-control' } {...register("person_id", { required: "Este campo é obrigatório." })}>
-        <GetPeople></GetPeople>
-      </select>
-      <ErrorMessage
-        errors={errors}
-        name="person_id"
-        render={({ message }) => <p className="error">{message}</p>}
-      />
-      <label htmlFor="date_validate">Data de validade:</label>
-      <input
-        id="date_validate"
-        type="date" 
-        placeholder="ex: 29/11/2022" 
-        className={ errors.date_validate ? 'form-control input-red' : 'form-control' } 
-        {...register("date_validate", { required: "Este campo é obrigatório." })}>
-      </input>
-      <ErrorMessage
-        errors={errors}
-        name="date_validate"
-        render={({ message }) => <p className="error">{message}</p>}
-      />
+      <div className="content">
+        <label htmlFor="person_id">Pessoa:</label>
+        <select id="person_id" className={ errors.person_id ? 'form-control input-red' : 'form-control' } {...register("person_id", { required: "Este campo é obrigatório." })}>
+          <GetPeople></GetPeople>
+        </select>
+        <ErrorMessage
+          errors={errors}
+          name="person_id"
+          render={({ message }) => <p className="error">{message}</p>}
+        />
+      </div>
+      <div className="content">
+        <label htmlFor="date_validate">Data de validade:</label>
+        <input
+          id="date_validate"
+          type="date" 
+          placeholder="ex: 29/11/2022" 
+          className={ errors.date_validate ? 'form-control input-red' : 'form-control' } 
+          {...register("date_validate", { required: "Este campo é obrigatório." })}>
+        </input>
+        <ErrorMessage
+          errors={errors}
+          name="date_validate"
+          render={({ message }) => <p className="error">{message}</p>}
+        />
+      </div>
       <button className="submit" type="submit">Cadastrar</button>
     </form>
   )

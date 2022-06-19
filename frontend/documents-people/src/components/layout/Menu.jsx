@@ -87,7 +87,7 @@ export default function Menu(props) {
                 render={({ message }) => <p className="error">{message}</p>}
               />
             </div>
-            <button type="submit">Cadastrar</button>
+            <button className="submit" type="submit">Cadastrar</button>
           </form>
         </ModalCustom>
         <ModalCustom title="Criar contrato" button="Criar contrato">
