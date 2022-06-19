@@ -1,5 +1,5 @@
 <h1>Projeto desenvolvido para o desafio da SOGO Tecnologia. Capaz de cadastrar pessoas na plataforma e criar contratos a partir delas.</h1>
-<hr>
+<hr/>
 <br/>
 <p>Visão geral das features:</p>
 <ul>
@@ -14,7 +14,7 @@
 <br/><br/>
 <p>Para executar o projeto</p>
 <ol>
-  <li>Primeiramente entrar na pasta de back-end "cd backend/"</li>
+  <li>Primeiramente, entrar na pasta de back-end "cd backend/"</li>
   <li>Instalar dependências com o comando "npm i"</li>
   <li>Rodar o back com o comando "npm run dev"</li>
   <li>Em outro terminal entrar na pasta de front-end "cd frontend/documents-people/"</li>
